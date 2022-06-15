@@ -1,0 +1,579 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: 'Secular One', sans-serif;
+}
+
+body {
+    background-image: url(../assets/img/misterio.jpg);
+    background-size: cover;
+}
+
+/* Aplico GRID al index*/
+
+.grid-container1 {
+    min-height: 1000px;
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "header header header"
+    "contenido contenido aside"
+    "caja1 caja2 aside"
+    "footer footer footer";
+}
+
+.grid-container1 header,
+.grid-container1 main,
+.grid-container1 aside,
+.grid-container1 footer {
+    padding: 30px;
+    border-radius: 5px;
+}
+
+/* Fin grid index ------------------------------------------------------------------------*/
+
+/* Aplico grid a "historia" */
+
+.grid-container2 {
+    min-height: 1000px;
+    padding: 20px;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "header header header header"
+    "contenido contenido contenido contenido"
+    "caja3 caja3 caja4 caja4"
+    "footer footer footer footer";
+}
+
+.grid-container2 header,
+.grid-container2 main,
+.grid-container2 footer {
+    padding: 30px;
+    border-radius: 5px;
+}
+
+/* Fin grid "Historia" ------------------------------------------------------------------------ */
+
+/* Aplico Grid a "Galeria" */
+
+.grid-container3 {
+    min-height: 1000px;
+    padding: 20px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100px 200px 250px 250px 250px 100px;
+    grid-template-areas:"header header header header"
+    "contenido contenido contenido contenido"
+    "img1 img2 img3 img3"
+    "img1 img4 img5 img6"
+    "img7 img4 img8 img8"
+    "footer footer footer footer";
+}
+
+.grid-container3 header,
+.grid-container3 main,
+.grid-container3 footer {
+    padding: 30px;
+    border-radius: 5px;
+}
+
+/* Fin grid "Galeria" ------------------------------------------------------------------------------------ */
+
+
+/* Modifico mi "HEADER | INDEX" con grid, flexbox y box-model */
+
+.grid-container1 header {
+    grid-area: header;
+    background-color: #0f0f27;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    padding: 20px;
+}
+
+.nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    font-size: 20px;
+    letter-spacing: 4px;
+    padding: 0px 30px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.nav a:hover {
+    color: #00ffff;
+    transition: .4s;
+}
+
+/* Fin modificaciones a mi header ------------------------------------------------------------------- */
+
+/* Agrego un DIV con una SocialBar */
+
+.social{
+    position: fixed;
+    left: 0;
+    top: 200px;
+    z-index: 2000;
+}
+
+.social ul{
+    list-style: none;
+}
+
+.social ul li a {
+    display: inline-block;
+    color: white;
+    background-color: black;
+    text-decoration: none;
+    padding: 20px 8px;
+    transition: all 500ms ease;
+}
+
+.social ul li .iconFacebook{
+    background-color: #3b5998;
+    font-size: 20px;
+}
+
+.social ul li .iconTwitter{
+    background-color: #00acee;
+    font-size: 20px;
+}
+
+.social ul li .iconInstagram{
+    background-color: #3f729b;
+    font-size: 20px;
+}
+
+.social ul li a:hover{
+    padding: 10px 30px;
+    background: black;
+}
+
+/* Final de SocialBar */
+
+/* Modificaciones a mi "MAIN | INDEX" con grid, flexbox, box-models */
+
+.grid-container1 main {
+    background-color: #b1b1b1;
+    grid-area: contenido;
+}
+
+.grid-container1 main h1 {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.grid-container1 p {
+    display: flex;
+    font-size: 15px;
+    align-items: center;
+    align-content: center;
+    letter-spacing: 1px;
+}
+
+.grid-container1 div img {
+    display: flex;
+    height: 290px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Fin modificaciones a mi main ------------------------------------------------------------------------- */
+
+/* Modificaciones a mi "ASIDE | INDEX" con grid, flexbox, box-models */
+
+.grid-container1 aside {
+    background-color: #038559;
+    grid-area: aside;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+/* Fin modificaciones aside ---------------------------------------------------------------------------- */
+
+/* Modificaciones a mis "CAJAS 1 y 2 | INDEX" con grid, flexbox, box-models */
+
+.grid-container1 .caja1{
+    background-image: url(../assets/img/dinosaurio1.jpg);
+    background-size: cover;
+    background-position: center;
+    border: solid 3px #ffffff;
+    border-radius: 10px;
+    height: 250px;
+}
+
+.grid-container1 .caja2 {
+    background-image: url(../assets/img/dinosaurio5.jpg);
+    background-size: cover;
+    background-position: center;
+    border: solid 3px #ffffff;
+    border-radius: 10px;
+}
+
+.grid-container1 .caja1 {
+    grid-area: caja1;
+}
+
+.grid-container1 .caja2 {
+    grid-area: caja2;
+}
+
+.caja:hover {
+    transform: scale(1.10);
+    transition: .5s;
+}
+
+
+/* Fin modificaciones cajas ----------------------------------------------------------------------- */
+
+/* Modificaciones a mi "FOOTER | INDEX" con grid, flexbox, box-models */
+
+.grid-container1 footer {
+    grid-area: footer;
+    background-color: #0f0f27;
+    color: #ffffff;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 25px;
+}
+
+/* fin modificaciones a mi footer ----------------------------------------------------------------------- */
+
+/* Modifico mi "HEADER | HISTORIA" con grid, flexbox y box-model */
+
+.grid-container2 header {
+    grid-area: header;
+    background-color: #0f0f27;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    padding: 20px;
+}
+
+/* Fin Header */
+
+/* Modifico mi "MAIN | HISTORIA" con grid, flexbox y box-model */
+
+.grid-container2 main {
+    background-color: #b1b1b1;
+    grid-area: contenido;
+}
+
+.grid-container2 main h1 {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-bottom: 10px;
+}
+
+.grid-container2 p {
+    display: flex;
+    font-size: 15px;
+    align-items: center;
+    align-content: center;
+    letter-spacing: 1px;
+}
+
+/* Fin main ------------------------------------------------------------------------------ */
+
+/* Modifico mis "CAJAS 3 y 4 | HISTORIA" con grid, flexbox y box-model */
+.grid-container2 .caja3,
+.grid-container2 .caja4 {
+    background-color: #643c2d;
+    color: #ffffff;
+    min-height: 400px;
+    max-height: 700px;
+    border-radius: 25px;
+}
+
+.grid-container2 .caja3 {
+    grid-area: caja3;
+}
+
+.grid-container2 .caja4 {
+    grid-area: caja4;
+}
+
+.caja3 h3 {
+    display: flex;
+    justify-content: center;
+}
+
+.caja3 p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.caja3 img {
+    height: 300px;
+    width: 100%;
+    padding: 20px;
+}
+
+.caja4 h3 {
+    display: flex;
+    justify-content: center;
+}
+
+.caja4 p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.caja4 img {
+    height: 300px;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Fin cajas 3 y 4 ------------------------------------------------------------------------- */
+
+/* Modifico mi "FOOTER | HISTORIA" con grid, flexbox y box-model */
+
+.grid-container2 footer {
+    grid-area: footer;
+    background-color: #0f0f27;
+    color: #ffffff;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 25px;
+}
+
+/* Fin modificaciones "footer" ------------------------------------------------------------------------- */
+
+/* Modifico mi "HEADER | GALERIA" con grid, flexbox y box-model */
+
+.grid-container3 header {
+    grid-area: header;
+    background-color: #0f0f27;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    padding: 20px;
+}
+
+/* Fin modificaciones a mi "HEADER | GALERIA" ------------------------------------------------------------------- */
+
+/* Modifico mi "MAIN | GALERIA" con grid, flexbox y box-model */
+
+.grid-container3 main {
+    background-color: #b1b1b1;
+    grid-area: contenido;
+    height: 200px;
+}
+
+.grid-container3 main h2 {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.grid-container3 p {
+    display: flex;
+    font-size: 15px;
+    align-items: center;
+    align-content: center;
+    letter-spacing: 1px;
+}
+
+/* Fin modificaciones a mi "MAIN | GALERIA" ------------------------------------------------------------------- */
+
+/* Modifico mi "CAJA5 | GALERIA" con grid, flexbox y box-model */
+
+.img {
+    border: solid 5px #ffffff;
+    border-radius: 10px;
+}
+
+.img:hover {
+    transform: scale(1.10);
+    transition: .5s;
+}
+
+.grid-container3 .img1 {
+    grid-area: img1;
+    background-color: #f5deb3;
+    background-image: url(../assets/img/dinosaurio5.jpg);
+    background-size: cover;
+    background-position: left;
+}
+
+.grid-container3 .img2 {
+    grid-area: img2;
+    background-color: #663399;
+    background-image: url(../assets/img/dinosaurio4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.grid-container3 .img3 {
+    grid-area: img3;
+    background-color: #ff6347;
+    background-image: url(../assets/img/dinosaurio2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.grid-container3 .img4 {
+    grid-area: img4;
+    background-color: #9acd32;
+    background-image: url(../assets/img/dinosaur.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.grid-container3 .img5 {
+    grid-area: img5;
+    background-color: #808000;
+    background-image: url(../assets/img/dinosaurio6.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+.grid-container3 .img6 {
+    grid-area: img6;
+    background-color: #ffa500;
+    background-image: url(../assets/img/dinosaurio4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.grid-container3 .img7 {
+    grid-area: img7;
+    background-color: #ff4500;
+    background-image: url(../assets/img/dinosaurio2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.grid-container3 .img8 {
+    grid-area: img8;
+    background-color: #cd853f;
+    background-image: url(../assets/img/dinosaurio3.png);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Fin modificaciones a mi "CAJA5 | GALERIA" ------------------------------------------------------------------- */
+
+/* Modifico mi "FOOTER | GALERIA" con grid, flexbox y box-model */
+
+.grid-container3 footer {
+    grid-area: footer;
+    background-color: #0f0f27;
+    color: #ffffff;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 25px;
+}
+
+/* Fin modificaciones a mi "FOOTER | GALERIA" ------------------------------------------------------------------- */
+
+/* Aplico media queries */
+
+/* Vista mobile "index" -------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 768px) {
+
+    .grid-container1 {
+
+    grid-template-areas: "header header header"
+    "contenido contenido contenido"
+    "aside aside aside "
+    "caja1 caja1 caja1"
+    "footer footer footer";
+    }
+
+    .grid-container1 main {
+    background-color: #363636;
+    color: #ffffff;
+    }
+}
+
+/* Vista mobile "historia" ---------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 768px) {
+
+    .grid-container2 {
+
+    grid-template-areas: "header header header header"
+    "contenido contenido contenido contenido"
+    "caja3 caja3 caja3 caja3"
+    "caja4 caja4 caja4 caja4"
+    "footer footer footer footer";
+    }
+
+    .grid-container2 main {
+    background-color: #585858;
+    color: #ffffff;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .grid-container3 {
+
+    grid-template-areas: "header header header header"
+    "contenido contenido contenido contenido"
+    "img1 img1 img2 img2 "
+    "img3 img3 img4 img4"
+    "img5 img5 img6 img6"
+    "footer footer footer footer";
+    }
+
+
+    .grid-container3 header h2{
+    font-size: 20px;
+    }
+
+    .nav ul li{
+    font-size: 16px;
+    }
+
+    .grid-container3 main{
+    height: 200px;
+    }
+
+    .grid-container3 main p{
+    font-size: 14px;
+    }
+}
